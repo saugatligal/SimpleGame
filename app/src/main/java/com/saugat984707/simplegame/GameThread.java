@@ -37,6 +37,7 @@ public class GameThread extends Thread
                 {
                     view.onDraw(c);
 
+
                 }
             }
             finally
