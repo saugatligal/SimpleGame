@@ -2,22 +2,23 @@ package com.saugat984707.simplegame;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 GameView gameView;
     private Button flowerButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gameView = new GameView(this);
-
+////
         flowerButton = new Button(this);
         flowerButton.setWidth(350);
         flowerButton.setHeight(100);
@@ -28,13 +29,15 @@ GameView gameView;
         flowerButton.setOnClickListener(this);
         flowerButton.setGravity(Gravity.CENTER);
         FrameLayout GameLayout = new FrameLayout(this);
-        LinearLayout ButtonLayout = new LinearLayout(this);
-        ButtonLayout.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
-        ButtonLayout.addView(flowerButton);
+        LinearLayout buttonlayout = new LinearLayout(this);
+
+       // buttonlayout.addView(flowerButton);
+    //    buttonlayout.addView(image);
+       // buttonlayout.setBackgroundResource(R.drawable.background);
 
         GameLayout.addView(gameView);
-        GameLayout.addView(ButtonLayout);
-        setContentView(gameView);
+        GameLayout.addView(buttonlayout);
+        setContentView(GameLayout);
     }
 
     @Override
